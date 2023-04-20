@@ -16,15 +16,10 @@ class UpcomingMoviePage extends GetView<UpcomingMovieController> {
       builder: (controller) => Scaffold(
         appBar: AppBar(
           backgroundColor: ThemeColor.white,
-          title: const Text('Watch',
+          title: const Text('Movies',
               style: TextStyle(
                   color: ThemeColor.primaryBlack, fontFamily: 'Poppins')),
           elevation: 0,
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.search, color: ThemeColor.primaryBlack))
-          ],
         ),
         body: controller.isLoading
             ? const Center(child: CircularProgressIndicator())
@@ -60,32 +55,34 @@ class UpcomingMoviePage extends GetView<UpcomingMovieController> {
                             child: Container(
                               height: 60,
                               decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(12.0),
-                                      bottomRight: Radius.circular(12.0)),
-                                  gradient: LinearGradient(
-                                      begin: Alignment.bottomCenter,
-                                      end: Alignment.topCenter,
-                                      colors: [
-                                        Colors.black.withOpacity(0.7),
-                                        Colors.transparent
-                                      ])),
+                                borderRadius: const BorderRadius.only(
+                                    bottomLeft: Radius.circular(12.0),
+                                    bottomRight: Radius.circular(12.0)),
+                                gradient: LinearGradient(
+                                  begin: Alignment.bottomCenter,
+                                  end: Alignment.topCenter,
+                                  colors: [
+                                    Colors.black.withOpacity(0.7),
+                                    Colors.transparent
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                           Positioned(
-                              bottom: 12,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 12),
-                                child: Text(
-                                  controller
-                                      .upcomingMovies[index].originalTitle,
-                                  style: poppinsRegular(
-                                      fontSize: 20,
-                                      color: ThemeColor.white,
-                                      fontWeight: FontWeight.bold),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              )),
+                            bottom: 12,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 12),
+                              child: Text(
+                                controller.upcomingMovies[index].originalTitle,
+                                style: poppinsRegular(
+                                    fontSize: 20,
+                                    color: ThemeColor.white,
+                                    fontWeight: FontWeight.bold),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     );

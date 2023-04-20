@@ -49,13 +49,15 @@ class MovieDetailsPage extends GetView<MovieDetailsController> {
                               child: Container(
                                 height: 200,
                                 decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                        begin: Alignment.bottomCenter,
-                                        end: Alignment.topCenter,
-                                        colors: [
+                                  gradient: LinearGradient(
+                                    begin: Alignment.bottomCenter,
+                                    end: Alignment.topCenter,
+                                    colors: [
                                       Colors.black.withOpacity(0.7),
                                       Colors.transparent
-                                    ])),
+                                    ],
+                                  ),
+                                ),
                               ),
                             ),
                           ],
